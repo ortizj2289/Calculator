@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice</title>
+        <link rel="stylesheet" href="calculator_style.css">
+        <script src="calculator_script.js"></script>
+    </head>
+
+    <body>
+        
+        <div id="result_face">
+            <p id="digital_display"></p>
+        </div>
+        <div id="calculator_face">
+            <button onclick="clearResult()" class="clr_button" id="c_button">C</button>
+            <button class="op_button" id="()_button">( )</button>
+            <button class="op_button" id="%_button">%</button>
+            <button class="op_button" id="/_button">/</button>
+            <br>
+            <button onclick="buttonClick(value)" class="num_input_button" id="7_button" value="7">7</button>
+            <button onclick="buttonClick(value)" class="num_input_button" id="8_button" value="8">8</button>
+            <button onclick="buttonClick(value)" class="num_input_button" id="9_button" value="9">9</button>
+            <button class="op_button" id="x_button">x</button>
+            <br>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="4_button" value="4">4</button>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="5_button" value="5">5</button>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="6_button" value="6">6</button>
+            <button class="op_button" id="-_button">-</button>
+            <br>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="1_button" value="1">1</button>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="2_button" value="2">2</button>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="3_button" value="3">3</button>
+            <button onclick="buttonClick(value)" class="op_button" id="+_button" value="+">+</button>
+            <br>
+            <button class="num_input_button" id="+/-_button">+/-</button>
+            <button onclick="buttonClick(value)"  class="num_input_button" id="0_button" value="0">0</button>
+            <button class="num_input_button" id="._button">.</button>
+            <button class="equals_button" id="=_button">=</button>
+        </div>
+    </body>
+</html>
