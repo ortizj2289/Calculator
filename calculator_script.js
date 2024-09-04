@@ -12,17 +12,14 @@ function clearResult(){
 function buttonClick(val){
     //log it
     console.log(`You clicked the ${val} button!`);
-    console.log(digital_display);
-
+    console.log(typeof val)
     //listen for number or symbol
-    if(typeof val === "number"){
+    if(typeof val === Number){
         let digital_display = document.getElementById("digital_display");
 
         //display the number
-        digital_display.textContent += val; //ERROR
+        digital_display.innerHTML += val;
 
-        //TEST MESSAGE - DELETE AFTER TEST!
-        console.log('hello');
     } else{
         
         //identify the first operand

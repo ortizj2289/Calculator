@@ -12,7 +12,7 @@ body{
     border-bottom: 2px solid rgb(39, 39, 39);
 }
 
-#result_value{
+#digital_display{
     text-align: right;
     margin: 30px 15px 0px;
     font-size: xx-large;
