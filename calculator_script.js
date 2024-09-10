@@ -1,36 +1,44 @@
-var running_total = 0;
+let operand1 = 0;
+let operand2 = 0;
+let operator = "";
+let result = 0;
+let operator_set = false;
 
-function clearResult(){
-    
-    console.log(`You clicked the CLEAR button!`);
+function click_function(val){
+    let display = document.getElementById("digital_display");
 
-    let digital_display = document.getElementById("digital_display");
-    digital_display.textContent = "";
-    running_total = 0;
+    //if val is a NUMBER
+    if(!isNaN(val)){
+        display.innerHTML += val;
+    } else if(val != "="){ //If val is NOT A NUMBER
+        operator = val; //identifies the operator used
+        operator_set = true;
+        operand1 = display.innerHTML;   //sets the first value
+        display.innerHTML += val;   //display the operator
+    } else if(val == "="){
+        display.innerHTML += val;   //display the "=" character
+        operand2 = (display.innerHTML).substring(((display.innerHTML).indexOf(operator)+1),((display.innerHTML).indexOf("=")));
+        
+        switch(operator){
+            case "+":
+                result = Number(operand1) + Number(operand2);
+                break;
+            case "-":
+                result = Number(operand1) - Number(operand2);
+                break;
+            case "x":
+                result = Number(operand1) * Number(operand2);
+                break;
+            case "/":
+                result = Number(operand1) / Number(operand2);
+                break;
+        }
+
+        display.innerHTML = Number(result);
+    }
 }
 
-function buttonClick(val){
-    //log it
-    console.log(`You clicked the ${val} button!`);
-    console.log(typeof val)
-    //listen for number or symbol
-    if(typeof val === Number){
-        let digital_display = document.getElementById("digital_display");
-
-        //display the number
-        digital_display.innerHTML += val;
-
-    } else{
-        
-        //identify the first operand
-        let first_operand = parseInt(digital_display);
-
-        //log the first operand
-        console.log(`The first operand is ${first_operand}`);
-
-        //display the symbol
-        digital_display.textContent += val;
-
-    }
-
+function clear_function(){
+    let display = document.getElementById("digital_display");   //target the display
+    display.innerHTML = ""; //reassign it an empty value
 }

@@ -9,33 +9,33 @@
 
     <body>
         <div id="result_face">
-            <p id="digital_display" value="0"></p>
+            <p id="digital_display"></p>
         </div>
         <div id="calculator_face">
-            <button onclick="clearResult()" class="clr_button" id="c_button">C</button>
-            <button class="op_button" id="()_button">( )</button>
-            <button class="op_button" id="%_button">%</button>
-            <button class="op_button" id="/_button">/</button>
+            <button onclick="clear_function()" class="clr_button">C</button>
+            <button onclick="click_function()" class="operator_button">( )</button>
+            <button onclick="click_function()" class="operator_button">%</button>
+            <button onclick="click_function('/')" class="operator_button">/</button>
             <br>
-            <button onclick="buttonClick(value)" class="num_input_button" id="7_button" value="7">7</button>
-            <button onclick="buttonClick(value)" class="num_input_button" id="8_button" value="8">8</button>
-            <button onclick="buttonClick(value)" class="num_input_button" id="9_button" value="9">9</button>
-            <button class="op_button" id="x_button">x</button>
+            <button onclick="click_function(7)" class="number_button">7</button>
+            <button onclick="click_function(8)" class="number_button">8</button>
+            <button onclick="click_function(9)" class="number_button">9</button>
+            <button onclick="click_function('x')" class="operator_button">x</button>
             <br>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="4_button" value="4">4</button>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="5_button" value="5">5</button>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="6_button" value="6">6</button>
-            <button class="op_button" id="-_button">-</button>
+            <button onclick="click_function(4)" class="number_button">4</button>
+            <button onclick="click_function(5)" class="number_button">5</button>
+            <button onclick="click_function(6)" class="number_button">6</button>
+            <button onclick="click_function('-')" class="operator_button">-</button>
             <br>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="1_button" value="1">1</button>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="2_button" value="2">2</button>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="3_button" value="3">3</button>
-            <button onclick="buttonClick(value)" class="op_button" id="+_button" value="+">+</button>
+            <button onclick="click_function(1)" class="number_button">1</button>
+            <button onclick="click_function(2)" class="number_button">2</button>
+            <button onclick="click_function(3)" class="number_button">3</button>
+            <button onclick="click_function('+')" class="operator_button">+</button>
             <br>
-            <button class="num_input_button" id="+/-_button">+/-</button>
-            <button onclick="buttonClick(value)"  class="num_input_button" id="0_button" value="0">0</button>
-            <button class="num_input_button" id="._button">.</button>
-            <button class="equals_button" id="=_button">=</button>
+            <button onclick="click_function()" class="pos_neg_button">+/-</button>
+            <button onclick="click_function(0)" class="number_button">0</button>
+            <button onclick="click_function()" class="decimal_button">.</button>
+            <button onclick="click_function('=')" id="equals_button">=</button>
         </div>
     </body>
 </html>
