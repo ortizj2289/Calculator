@@ -7,18 +7,23 @@ let operator_set = false;
 function click_function(val){
     let display = document.getElementById("digital_display");
 
-    //if val is a NUMBER
-    if(!isNaN(val)){
-        display.innerHTML += val;
-    } else if(val != "="){ //If val is NOT A NUMBER
-        operator = val; //identifies the operator used
-        operator_set = true;
-        operand1 = display.innerHTML;   //sets the first value
-        display.innerHTML += val;   //display the operator
-    } else if(val == "="){
-        display.innerHTML += val;   //display the "=" character
-        operand2 = (display.innerHTML).substring(((display.innerHTML).indexOf(operator)+1),((display.innerHTML).indexOf("=")));
+    if(!isNaN(val)){    //display the number the user clicked
+        display.textContent += val;
+    } else if(val != "="){ //display the operator the user clicked...
         
+        if(display.textContent === ""){ //UNLESS the user has not clicked a number yet!
+            alert("invalid format used.");
+        }else{
+            operator = val; //identifies the operator used
+            operator_set = true;
+            operand1 = display.textContent;   //sets the first value
+            display.textContent += val;   //display the operator
+        }
+
+    } else if(val == "="){  //perform the calculation and display the result
+        let operands = (display.textContent).split(operator);
+        operand2 = operands[1];
+
         switch(operator){
             case "+":
                 result = Number(operand1) + Number(operand2);
@@ -34,11 +39,11 @@ function click_function(val){
                 break;
         }
 
-        display.innerHTML = Number(result);
+        display.textContent = Number(result);
     }
 }
 
 function clear_function(){
     let display = document.getElementById("digital_display");   //target the display
-    display.innerHTML = ""; //reassign it an empty value
+    display.textContent = ""; //reassign it an empty value
 }

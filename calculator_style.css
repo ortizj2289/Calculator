@@ -56,11 +56,11 @@ button:active{
 }
 
 .operator_button{
-    color: rgb(48, 225, 252);
+    color: #6c9ac6;
     /*font-size: x-large;*/
 }
 
 #equals_button{
-    background-color: rgb(48, 225, 252);
+    background-color: #6c9ac6;
     /*font-size: x-large;*/
 }
