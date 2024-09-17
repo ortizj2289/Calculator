@@ -4,6 +4,13 @@ let operator = "";
 let result = 0;
 let operator_set = false;
 
+//prevent double-tap zoom-in
+document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
 function click_function(val){
     let display = document.getElementById("digital_display");
 
