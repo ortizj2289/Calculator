@@ -4,12 +4,22 @@ let operator = "";
 let result = 0;
 let operator_set = false;
 
+/////////////////////////////////////////////////////////////////////////////////////////
 //prevent double-tap zoom-in
+let lastTouchTime = 0; // Variable to store the last touch timestamp
+const rapidTouchThreshold = 300; // Threshold in milliseconds
+
 document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) {
-        event.preventDefault();
+    const currentTime = new Date().getTime(); // Get current timestamp
+
+    // Check if the time since last touch is less than the threshold
+    if (currentTime - lastTouchTime < rapidTouchThreshold) {
+        event.preventDefault(); // Prevent default action if it's a rapid touch
     }
+
+    lastTouchTime = currentTime; // Update last touch time
 }, { passive: false });
+//////////////////////////////////////////////////////////////////////////////////////////
 
 function click_function(val){
     let display = document.getElementById("digital_display");
